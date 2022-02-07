@@ -9,15 +9,7 @@ import { Pressable, View, Image } from 'react-native';
 
 export default function Song({songIndex, albumImage, title, artist, album, duration}){
     return(
-      <View key={item.id} style={styles.item}>
-        <Image style={styles.image} source={albumImage}/>
-        <View style={styles.songinfo}>
-          <Text style={styles.song}>{title}</Text>
           <Text style={styles.artist}>{artist}</Text>
-        </View>
-        <Text style={styles.album}>{album}</Text>
-        <Text style={styles.duration}>{duration}</Text>
-      </View>
     );
   }
 

@@ -59,7 +59,7 @@ export default function App() {
       </View>
       <FlatList
         data = {tracks} // the array of data that the FlatList displays
-        renderItem = {({item , index}) => renderItem(item, index)} // function that renders each item
+        renderItem={renderItem} // function that renders each item
         keyExtractor={(item, index) => index.toString()} // unique key for each item
       />
     </View>
@@ -73,14 +73,14 @@ export default function App() {
   };
 
   // given a track, render it as a Song component
-  const renderItem = ({item, index}) => (
+  const renderItem = (item, index) => (
     <Song 
       songIndex = {index}
-      albumImage = {item.album.images[0].url}
+      albumImage = {item.album.images[index].url}
       title = {item.id}
-      artist = {item.artists[0].name}
-      album = {item.album.name[0]}
-      duration = {millisToMinutesAndSeconds(item.artists.duration_ms)}
+      artist = {item.artists[index].name}
+      album = {item.album.name[index]}
+      duration = { millisToMinutesAndSeconds(item.artists.duration_ms) }
     />
   );
 
